@@ -30,53 +30,13 @@ body
 					img(src="{% static 'images/slider/1.jpg' %}", alt='2')
 				li
 					img(src="{% static 'images/slider/3.jpg' %}", alt='3')
+				li
+					img(src="{% static 'images/slider/4.jpg' %}", alt='4')
+
 	.container
 		.timer
 			#countdown
-				.days
-					.label dager
-					.pattern
-						.block
-					.number
-						span.countDays
-							span.position
-								span.digit.static
-							span.position
-								span.digit.static
-					.shadow
-				.hours
-					.label timer
-					.pattern
-						.block
-					.number
-						span.countHours
-							span.position
-								span.digit.static
-							span.position
-								span.digit.static
-					.shadow
-				.minutes
-					.label min
-					.pattern
-						.block
-					.number
-						span.countMinutes
-							span.position
-								span.digit.static
-							span.position
-								span.digit.static
-					.shadow.shadowFix2
-				.seconds
-					.label sek
-					.pattern
-						.block
-					.number
-						span.countSeconds
-							span.position
-								span.digit.static
-							span.position
-								span.digit.static
-					.shadow.shadowFix
+				
 	.build.buildRight
 	.build.buildLeft
 	.clearfix
@@ -87,9 +47,15 @@ body
 			h2 Under konstruksjon
 			h3 Ønsker du nyhetsbrev med den nyeste informasjonen? Meld deg på.
 			.clearfix
-			input(placeholder='dittnavn@domene.no', autocomplete='on')
-			br
-			button.subscribe ABONNER
+			form(method='POST', action="{% url 'comingsoon' %}")
+				- csrf_token
+				if subscribed
+					- var placeholder = sub_email + " har abbonert"
+				else
+					- var placeholder = "din@epost.no"
+				input(placeholder="{{ placeholder }}", autocomplete='on', name='email')
+				br
+				button.subscribe ABONNER
 	.content2
 		.social
 			a(href='#')

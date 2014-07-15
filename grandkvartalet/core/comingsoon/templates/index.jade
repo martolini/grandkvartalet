@@ -1,0 +1,139 @@
+- load staticfiles
+
+!!!5
+html(lang="no")
+head
+	meta(charset='utf-8')
+	title Grandkvartalet - kommer snart!
+	meta(name='description', content='Coming soon, understconstruction page')
+	meta(name='keywords', content='coming, soon, underconstruction, skords')
+	meta(name='author', content='Skords Graphics')
+	meta(name='viewport', content='initial-scale=1.0')
+	link(rel='stylesheet', type='text/css', href="{% static 'css/style.css' %}")
+	link(rel='stylesheet', type='text/css', href="{% static 'css/ie8.css' %}")
+	link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|Open+Sans:400italic,700italic,400,600,700', rel='stylesheet', type='text/css')
+	script(src="{% static 'js/jquery-latest.min.js' %}")
+	script(src="{% static 'js/unslider.js' %}")
+	script
+		$(function() {
+			$('.banner').unslider();
+		});
+	script(src="{% static 'js/jquery.countdown.js' %}")
+	script(src="{% static 'js/script.js' %}")
+body
+	.slider
+		.banner
+			ul
+				li
+					img(src="{% static 'images/slider/2.jpg' %}", alt='1')
+				li
+					img(src="{% static 'images/slider/1.jpg' %}", alt='2')
+				li
+					img(src="{% static 'images/slider/3.jpg' %}", alt='3')
+	.container
+		.timer
+			#countdown
+				.days
+					.label dager
+					.pattern
+						.block
+					.number
+						span.countDays
+							span.position
+								span.digit.static
+							span.position
+								span.digit.static
+					.shadow
+				.hours
+					.label timer
+					.pattern
+						.block
+					.number
+						span.countHours
+							span.position
+								span.digit.static
+							span.position
+								span.digit.static
+					.shadow
+				.minutes
+					.label min
+					.pattern
+						.block
+					.number
+						span.countMinutes
+							span.position
+								span.digit.static
+							span.position
+								span.digit.static
+					.shadow.shadowFix2
+				.seconds
+					.label sek
+					.pattern
+						.block
+					.number
+						span.countSeconds
+							span.position
+								span.digit.static
+							span.position
+								span.digit.static
+					.shadow.shadowFix
+	.build.buildRight
+	.build.buildLeft
+	.clearfix
+	.content1
+		.container
+			.line.lineR
+			.line.lineL
+			h2 Under konstruksjon
+			h3 Ønsker du nyhetsbrev med den nyeste informasjonen? Meld deg på.
+			.clearfix
+			input(placeholder='dittnavn@domene.no', autocomplete='on')
+			br
+			button.subscribe ABONNER
+	.content2
+		.social
+			a(href='#')
+				.fb
+		.social
+			a(href='#')
+				.gp
+		.social
+			a(href='#')
+				.twi
+		.social
+			a(href='#')
+				.rss
+		.social
+			a(href='#')
+				.in
+	.contFoot
+		.pattern
+		.container
+			.tweetcont
+				.content
+					.bar
+						.aboutIcon
+						h3 Nyhetsbrev
+						br
+					br
+					br
+					span
+						| Vi ønsker å holde deg oppdatert på det nyeste som skjer.
+						| Hjelp oss å utvikle Larvik!
+			.aboutcont
+				.content
+					.bar
+						.aboutIcon
+						h3 Om oss
+						br
+					br
+					br
+					span
+						| Snart lanseres en splitter ny nettside for grandkvartalet.
+						| Følg utviklingen, se reguleringsplaner, få et innblikk i Larviks nye kjerne.
+						| Litt mer tekst, kanskje.
+	.clearfix
+	.footer
+		| Copyrights 2014 
+		a(href='#') Grandkvartalet
+		| . All rights reserved.

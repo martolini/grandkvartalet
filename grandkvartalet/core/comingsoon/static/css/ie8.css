@@ -1,0 +1,16 @@
+/* = - = */
+/* This CSS is valid if using IE 8 */
+/* = - = */
+
+.content {
+	background-color: #383d45 !important;
+}
+
+.label {
+	padding: 0 2px 0 3px;
+	background: #383d45;
+}
+
+input {
+	padding-top:15px;
+}

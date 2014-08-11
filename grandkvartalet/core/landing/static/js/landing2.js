@@ -25,7 +25,7 @@ $(document).ready(function(e) {
     /*Hero Slider*/
     window.slider = $('.hero-slider').bxSlider({
         mode: 'fade',
-        adaptiveHeight: false,
+        adaptiveHeight: true,
         controls: false,
         touchEnabled: false,
         pager: false

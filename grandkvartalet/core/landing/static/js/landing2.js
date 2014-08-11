@@ -28,6 +28,7 @@ $(document).ready(function(e) {
         adaptiveHeight: false,
         controls: false,
         touchEnabled: false,
+        pager: false
     });
 
     $('.set-slider-img').click(function(e) {

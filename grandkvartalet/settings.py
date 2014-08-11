@@ -43,6 +43,8 @@ INSTALLED_APPS = (
     'pyjade',
 
     'grandkvartalet.core.comingsoon',
+    'grandkvartalet.core.landing',
+    'grandkvartalet.app.contact',
 )
 
 MIDDLEWARE_CLASSES = (

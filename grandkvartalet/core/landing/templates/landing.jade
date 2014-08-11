@@ -64,8 +64,6 @@ body.space-top
 					li.active
 						a.scroll-up.set-slider-img(href='#', data-img="0") Hjem
 					li
-						a(href="{% static 'pdf/brosjyre.pdf' %}", target='_blank') Om Prosjektet
-					li
 						a.scroll(href='#arkitekten') Artikekten har ordet
 					- comment
 					li
@@ -75,6 +73,9 @@ body.space-top
 						a.scroll(href='#faq') Fakta
 					li
 						a.scroll(href='#contacts') Kontakt oss
+					li
+						a(href="{% static 'pdf/brosjyre.pdf' %}", target='_blank')
+							| Om prosjektet (pdf)
 	// Hero Unit with Slider
 	section.hero
 		.container
@@ -108,8 +109,14 @@ body.space-top
 							img.img-rounded.img-center(src="{% static 'img/hero-slider/grandplassen.jpg' %}")
 					.slide
 						.col-lg-4.col-md-4.col-sm-4.animated.fadeInUp
-							h2.text-light.text-left Hjertet i sentrum
+							h2.text-light.text-left Byutvikling
 							p Grandkvartalet vil styrke sentrum med to moderne kontorbygg, mange nye butikkarealer og 150 nye boliger. Sammen med utvidelse av hotellet vil det gi et marked for servering og detaljhandel på gateplan. Grandkvartalet åpnes opp og skaper en ny ferdselsåre gjennom byen. Her vil butikkene ligge på gateplan med publikumsrettede fasader som skaper god stemning i nye byrom.
+						.col-lg-8.col-md-8.col-sm-8.animated.fadeInRight
+							img.img-rounded.img-center(src="{% static 'img/hero-slider/oversikt.jpg' %}")
+					.slide
+						.col-lg-4.col-md-4.col-sm-4.animated.fadeInUp
+							h2.text-light.text-left Hjerte i Larvik
+							p Vi ville finne et bygrep som vitaliserer sentrum, skaper ny vekst og gjør vandringen mellom Torget og indre havn til en spennende opplevelse. Hjertet gir puls og passasjen  gir opplevelse på ferden mellom havnen og bykjernen.
 						.col-lg-8.col-md-8.col-sm-8.animated.fadeInRight
 							img.img-rounded.img-center(src="{% static 'img/hero-slider/hjertet.jpg' %}")
 			//Close Hero Slider
@@ -118,10 +125,10 @@ body.space-top
 	section#mainimages.page-block
 		.container
 			.row.features
-				.col-lg-2.col-md-2.col-sm-2.col-lg-offset-1.col-md-offset-1.col-sm-offset-1
+				.col-lg-2.col-md-2.col-sm-2
 					.feature-img
 						a.set-slider-img(data-img="0")
-							img.img-rounded.img-center(src="{% static 'img/features/trapp.jpg' %}", , alt='La rambla')
+							img.img-rounded.img-center(src="{% static 'img/features/trapp.jpg' %}", , alt='Grandplassen')
 					h3 Grandplassen
 					a.set-slider-img(data-img="0", style='cursor: pointer;') Les mer
 				.col-lg-2.col-md-2.col-sm-2
@@ -145,9 +152,15 @@ body.space-top
 				.col-lg-2.col-md-2.col-sm-2
 					.feature-img
 						a.set-slider-img(data-img="4")
-							img.img-rounded.img-center(src="{% static 'img/features/hjertet.jpg' %}", , alt='Hjertet')
-					h3 Hjertet
+							img.img-rounded.img-center(src="{% static 'img/features/oversikt.jpg' %}", , alt='Hjertet')
+					h3 Byutvikling
 					a.set-slider-img(data-img="4", style='cursor: pointer;') Les mer
+				.col-lg-2.col-md-2.col-sm-2
+					.feature-img
+						a.set-slider-img(data-img="5")
+							img.img-rounded.img-center(src="{% static 'img/features/hjertet.jpg' %}", , alt='Oversikt')
+					h3 Hjerte i Larvik
+					a.set-slider-img(data-img="5", style='cursor: pointer;') Les mer
 
 	section#arkitekten.page-block
 		.container

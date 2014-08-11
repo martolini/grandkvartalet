@@ -27,7 +27,7 @@ $(document).ready(function(e) {
         mode: 'fade',
         adaptiveHeight: false,
         controls: false,
-        touchEnabled: false
+        touchEnabled: false,
     });
 
     $('.set-slider-img').click(function(e) {

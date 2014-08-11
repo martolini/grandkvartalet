@@ -368,7 +368,7 @@ blockquote footer {
 }
 .page-header {
   padding-bottom: 0;
-  margin: 0 0 70px 0;
+  margin: 0 0 10px 0;
   border-bottom: none;
 	text-align: center;
 }
@@ -1846,7 +1846,7 @@ img {
 	height: auto;
 }
 .hero-slider img {
-	max-width: 100%;
+	max-width: 70%;
 	height: auto;
 }
 .bx-wrapper {
@@ -1922,7 +1922,7 @@ img {
 /*Page Blocks
 ---------------------------------------------------------*/
 .page-block {
-	padding: 50px 0 60px 0;
+	padding: 40px 0 0 0;
 }
 .page-block.color {
 	background-color: #ff6f69;

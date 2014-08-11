@@ -67,8 +67,10 @@ body.space-top
 						a(href="{% static 'pdf/brosjyre.pdf' %}", target='_blank') Om Prosjektet
 					li
 						a.scroll(href='#arkitekten') Artikekten har ordet
+					- comment
 					li
 						a.scroll(href='#gallery') Galleri
+					- endcomment
 					li
 						a.scroll(href='#faq') Fakta
 					li
@@ -120,7 +122,7 @@ body.space-top
 					.feature-img
 						a.set-slider-img(data-img="0")
 							img.img-rounded.img-center(src="{% static 'img/features/trapp.jpg' %}", , alt='La rambla')
-					h3 La rambla
+					h3 Grandplassen
 					a.set-slider-img(data-img="0", style='cursor: pointer;') Les mer
 				.col-lg-2.col-md-2.col-sm-2
 					.feature-img
@@ -182,6 +184,7 @@ body.space-top
 							p 
 								| Grandkvartalet vil åpne opp og skape en ny ferdselsåre gjennom byen. Her vil butikkene ligge på gateplan med publikumsrettede fasader som skaper god stemning i nye byrom. Traséen vil også binde byen sammen på en tydeligere måte som gjør det lettere å ferdes mellom by- kjernen og indre havn.
 	- endcomment
+	- comment
 
 	section#gallery.page-block
 		.container
@@ -208,11 +211,11 @@ body.space-top
 							span.img-caption Byutvikling
 
 	// FAQ
+	- endcomment
 	section#faq.page-block.faq
 		.container
 			.row.page-header
-				h2 Fakta
-				span Stikkordsfakta om Grandkvartalet
+				h2 Fakta om Grandkvartalet
 			.row
 				.col-lg-3.col-md-4.col-sm-4
 					img.img-center(src="{% static 'img/faq-icon.png' %}", alt='FAQ')
@@ -230,36 +233,30 @@ body.space-top
 							td Denne reguleringsplanen
 							td 27800m&sup2
 							td 240%
-
-					table.table(style='width: 100%')
 						tr
 							td Næring
-							td 12300m&sup2
+							td(colspan="2") 12300m&sup2
 						tr
 							td Boliger
-							td 15500m&sup2
+							td(colspan="2") 15500m&sup2
 						tr
 							td
 								strong SUM
-							td 
+							td(colspan="2") 
 								strong 27800&sup2
 						tr
 							td Parkering
-							td 10000m&sup2
+							td(colspan="2") 10000m&sup2
 
-					table.table(style='width: 100%')
-						tr
-							th Konstruksjon
-							th Etasjer
 						tr
 							td Prinsegata
-							td 4 etasjer
+							td(colspan="2") 4 etasjer
 						tr
 							td Storgata
-							td 5 etasjer (som dagens hotell)
+							td(colspan="2") 5 etasjer (som dagens hotell)
 						tr
 							td Tårnhus inne i kvartalet
-							td Inntil 8 etasjer
+							td(colspan="2") Inntil 8 etasjer
 					p.text-muted All bebyggelse trappet ift terreng
 
 	// Contacts
@@ -269,7 +266,15 @@ body.space-top
 				h2 Kontakt oss
 			.row
 				.col-lg-4.col-md-4
-					.row.space-bottom
+					.row
+						.col-lg-8.col-md-8
+							h3 Addresse
+						.col-lg-4.col-md-4
+							img.img-center(src="{% static 'img/contacts/map.png' %}", alt='Adress')
+					.row
+						.col-lg-12
+							p Nansetgata 30, Boks 86, 3251 Larvik
+					.row
 						.col-lg-12.col-md-12
 							h3 Følg oss på facebook!
 
@@ -278,15 +283,7 @@ body.space-top
 							.social-networks
 								a.icon-facebook.tooltipped(href='http://facebook.com/grandkvartalet', target='_blank', title='Facebook')
 				.col-lg-3.col-md-4.col-lg-offset-1
-					.row.space-bottom
-						.col-lg-8.col-md-8
-							h3 Addresse
-						.col-lg-4.col-md-4
-							img.img-center(src="{% static 'img/contacts/map.png' %}", alt='Adress')
 					.row
-						.col-lg-12
-							p Nansetgata 30, Boks 86, 3251 Larvik
-					.row.space-bottom
 						.col-lg-8.col-md-8
 							h3 Kontakter
 						.col-lg-4.col-md-4
@@ -294,15 +291,20 @@ body.space-top
 					.row
 						.col-lg-12
 							p
-								a(href='mailto:fer@skc.no') fer@skc.no
+								| Finn Erik Røed
 								br
-								a(href='mailto:jan@inter-eiendom.no') jan@inter-eiendom.no
+								a(href='mailto:fer@skc.no') fer@skc.no
 								br
 								| +47 91 30 51 61
 								br
+								br
+								| Jan Hansen
+								br
+								a(href='mailto:jan@inter-eiendom.no') jan@inter-eiendom.no
+								br
 								| +47 90 53 00 75
 				.col-lg-3.col-md-4.col-lg-offset-1
-					.row.space-bottom
+					.row
 						.col-lg-8.col-md-8
 							h3 Kontakt oss
 						.col-lg-4.col-md-

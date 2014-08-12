@@ -104,8 +104,9 @@ TEMPLATE_LOADERS = (
 
 # EMAIL
 EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'grandkvartalet.web@gmail.com'
-EMAIL_HOST_PASSWORD = 'ASDQWE123'
-EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = 'GrandkvartaletWeb'
 

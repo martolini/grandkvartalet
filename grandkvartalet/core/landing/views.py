@@ -9,7 +9,7 @@ def landing_view(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			contact = form.save()
-			email = EmailMessage('Ny epost fra grandkvartalet.no', 'Navn: %s \r\n\r\nEmail: %s\r\n\r\n %s' % (contact.name, contact.email, contact.message), to=['fer@skc.no', 'jan@inter-eiendom.no'])
+			email = EmailMessage('Ny epost fra grandkvartalet.no', 'Navn: %s \r\n\r\nEmail: %s\r\n\r\n%s' % (contact.name, contact.email, contact.message), to=[ 'jan@inter-eiendom.no', 'fer@skc.no'])
 			email.send()
 	return render(request, 'landing.jade')
 

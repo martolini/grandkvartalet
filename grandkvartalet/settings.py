@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import socket
-PRODUCTION = 'cauchy' in socket.gethostname()
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -23,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'v_99gv@icn5rtlygo8ezm&05lhy-@$zsqwkz&gc*5m=(3m&whr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = not PRODUCTION
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -63,15 +61,17 @@ WSGI_APPLICATION = 'grandkvartalet.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-if PRODUCTION:
-    STATIC_ROOT = '/opt/grenv/static/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+import dj_database_url
+remote_db = dj_database_url.config()
+if remote_db:
+    DATABASES['default'] = remote_db
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -91,7 +91,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = 'staticfiles'
 
 # TEMPLATE LOADERS PYJADE
 
@@ -102,6 +102,7 @@ TEMPLATE_LOADERS = (
     )),
 )
 
+
 # EMAIL
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
@@ -109,4 +110,8 @@ EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'grandkvartalet.web@gmail.com'
 EMAIL_HOST_PASSWORD = 'GrandkvartaletWeb'
+
+if os.environ.get('PRODUCTION', False):
+    DEBUG = False
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

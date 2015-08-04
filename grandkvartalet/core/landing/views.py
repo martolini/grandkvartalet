@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
@@ -14,11 +14,12 @@ def landing_view(request):
 			mandrill_client = mandrill.Mandrill('lqyeqHAZ1Fc5MN-j10g_ug')
 			message = {
 				'from_email': 'kontakt@grandkvartalet.no',
-				'from_name': 'Kontakt fra grandkvartalet.no',
+				'from_name': 'kontakt@grandkvartalet.no',
+				'subject': 'Ny melding fra grandkvartalet.no',
 				'to': [
 					{
 						'email': 'fer@skc.no',
-						'name': 'Finn Erik Roeed',
+						'name': 'Finn Erik Røed',
 						'type': 'to',
 					},
 					{
@@ -28,7 +29,7 @@ def landing_view(request):
 					},
 				],
 
-				'text': 'Navn: {}\r\n\r\nEmail: {}\r\n\r\n{}'.format(contact.name, contact.email, contact.message)
+				'text': u'Navn: {}\r\n\r\nEmail: {}\r\n\r\n{}'.format(contact.name, contact.email, contact.message)
 			}
 			result = mandrill_client.messages.send(message=message, async=True)
 	return render(request, 'landing.jade')

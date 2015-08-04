@@ -11,7 +11,7 @@ def landing_view(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			contact = form.save()
-			mandrill_client = mandrill.Mandrill('lqyeqHAZ1Fc5MN-j10g_ug')
+			mandrill_client = mandrill.Mandrill('52ZxkH8p1ENIBq0x2vokkg')
 			message = {
 				'from_email': 'kontakt@grandkvartalet.no',
 				'from_name': 'kontakt@grandkvartalet.no',
